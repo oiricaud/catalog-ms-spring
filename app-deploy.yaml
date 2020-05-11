@@ -6,9 +6,9 @@ metadata:
     authoritative-source-url: registry.access.redhat.com
     build-date: 2019-10-29T16:44:53.794580
     commit.image.appsody.dev/author: Hemankita Perabathini <hperabat@in.ibm.com>
-    commit.image.appsody.dev/committer: GitHub <noreply@github.com>
-    commit.image.appsody.dev/date: Thu Apr 30 09:51:55 2020 -0500
-    commit.image.appsody.dev/message: 'Merge pull request #2 from ibm-garage-ref-storefront/catalog-2.0'
+    commit.image.appsody.dev/committer: Hemankita Perabathini <hperabat@in.ibm.com>
+    commit.image.appsody.dev/date: Mon May 11 16:01:28 2020 +0530
+    commit.image.appsody.dev/message: app deploy on CP4Apps
     commit.stack.appsody.dev/author: kilnerm <38245247+kilnerm@users.noreply.github.com>
     commit.stack.appsody.dev/committer: GitHub <noreply@github.com>
     commit.stack.appsody.dev/contextDir: /incubator/java-spring-boot2
@@ -17,11 +17,11 @@ metadata:
     description: This image is the Kabanero development container for the java-spring-boot2
       stack
     distribution-scope: public
-    image.opencontainers.org/created: "2020-05-08T18:17:52+05:30"
-    image.opencontainers.org/documentation: https://github.com/phemankita/catalog-ms-spring
-    image.opencontainers.org/revision: 152632a49ffc8c7a390b11f1aa338c196ac2dbb2
-    image.opencontainers.org/source: https://github.com/phemankita/catalog-ms-spring/tree/master
-    image.opencontainers.org/url: https://github.com/phemankita/catalog-ms-spring
+    image.opencontainers.org/created: "2020-05-11T16:03:52+05:30"
+    image.opencontainers.org/documentation: https://github.com/ibm-garage-ref-storefront/catalog-ms-spring
+    image.opencontainers.org/revision: 01ce9391c26fd19eccd4461d8ca0efc3853fd75d-modified
+    image.opencontainers.org/source: https://github.com/ibm-garage-ref-storefront/catalog-ms-spring/tree/deploy
+    image.opencontainers.org/url: https://github.com/ibm-garage-ref-storefront/catalog-ms-spring
     k8s.io/description: The Universal Base Image is designed and engineered to be
       the base layer for all of your containerized applications, middleware and utilities.
       This base image is freely redistributable, but Red Hat only supports Red Hat
