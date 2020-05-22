@@ -64,7 +64,7 @@ Here is an overview of the project's features:
 
 ### Get the Catalog application
 
-- Clone inventory repository:
+- Clone catalog repository:
 
 ```bash
 git clone https://github.com/ibm-garage-ref-storefront/catalog-ms-spring.git
@@ -114,6 +114,12 @@ spec:
 ```
 
 ### Deploy Elasticsearch to Openshift
+
+- Add security constraints as follows.
+
+```
+oc adm policy add-scc-to-user privileged system:serviceaccount:storefront:default
+```
 
 - Now deploy the elasticsearch as follows.
 
