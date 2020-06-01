@@ -205,6 +205,12 @@ CONTAINER ID        IMAGE                                                 COMMAN
 
 ### Run the Catalog application
 
+- To test the unit test cases for the catalog application, run the below command.
+
+```
+appsody test --docker-options "-e ELASTIC_CLUSTER_NAME=docker-cluster -e ELASTIC_NODE_URL=host.docker.internal:9300 -e INVENTORY_URL=http://docker.for.mac.localhost:8081/micro/inventory"
+```
+
 - To run the catalog application, run the below command.
 
 ```
