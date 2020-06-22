@@ -19,8 +19,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import application.catalog.ItemController;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-public class ActuactorTest {
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT, properties = {"ELASTIC_CLUSTER=docker-cluster", "ELASTIC_NODE_URL=host.docker.internal:9300", "INVENTORY_URL=http://docker.for.mac.localhost:8081/micro/inventory"})
+public class ActuatorTest {
 
     @MockBean
     private ItemController itemController;
@@ -36,7 +36,7 @@ public class ActuactorTest {
 
     @Test
     public void testHealthEndpoint() {
-        System.out.println("testing...");
+        System.out.println("testing health end point...");
         ResponseEntity<String> entity = this.restTemplate.getForEntity("/actuator/health", String.class);
         assertThat(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(entity.getBody()).contains("\"status\":\"UP\"");
@@ -44,6 +44,7 @@ public class ActuactorTest {
 
     @Test
     public void testLivenessEndpoint() {
+        System.out.println("testing liveness end point...");
         ResponseEntity<String> entity = this.restTemplate.getForEntity("/actuator/liveness", String.class);
         assertThat(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(entity.getBody()).contains("\"status\":\"UP\"");
@@ -53,7 +54,7 @@ public class ActuactorTest {
     @SuppressWarnings("unchecked")
     public void testMetricsEndpoint() {
         testLivenessEndpoint(); // access a page
-
+        System.out.println("testing metrics end point...");
         @SuppressWarnings("rawtypes")
         ResponseEntity<Map> entity = this.restTemplate.getForEntity("/actuator/metrics", Map.class);
         assertThat(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
@@ -66,7 +67,7 @@ public class ActuactorTest {
     @Test
     public void testPrometheusEndpoint() {
         testLivenessEndpoint(); // access a page
-
+        System.out.println("testing prometheus end point...");
         ResponseEntity<String> entity = this.restTemplate.getForEntity("/actuator/prometheus", String.class);
         assertThat(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(entity.getBody()).contains("# TYPE jvm_buffer_count_buffers gauge");
